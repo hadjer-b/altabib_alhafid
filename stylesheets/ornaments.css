@@ -304,7 +304,7 @@
 /* Two diagonal stipes crossing each other */
 .interlace {
   --color: var(--color-primary);
-  height: 14px;
+  height: 12px;
 
   background-image:
     repeating-linear-gradient(
@@ -321,6 +321,8 @@
       transparent 2px,
       transparent 8px
     );
+
+  border-top: solid var(--border-sm) var(--color);
   opacity: 0.9;
 }
 
