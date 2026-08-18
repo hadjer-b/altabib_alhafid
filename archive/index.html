@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link
+      href="https://db.onlinewebfonts.com/c/7a4456451db34fc8abc7a9ce7da13480?family=F29LT+Bukra"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-star-pattern">
+    <!-- Background decorative corner overlays -->
+    <div class="bg-ornament top-left"></div>
+    <div class="bg-ornament bottom-right"></div>
+
+    <main class="dashboard-container">
+      <!-- Left Column: Input and Data -->
+      <div class="left-column">
+        <!-- The Form Block with an Islamic Interlocking Frame -->
+        <section class="block-element islamic-frame">
+          <div class="frame-header">
+            <div class="star-accent"></div>
+            <h2 class="section-title">بيانات / New Entry</h2>
+            <div class="star-accent"></div>
+          </div>
+
+          <form class="main-form">
+            <div class="form-group">
+              <label for="name">Item Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter registration name..."
+              />
+            </div>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <input
+                type="text"
+                id="category"
+                placeholder="Select system category..."
+              />
+            </div>
+            <button type="submit" class="btn-primary">Save Record</button>
+          </form>
+        </section>
+
+        <!-- The Table Block -->
+        <section class="block-element table-wrapper islamic-frame">
+          <div class="frame-header">
+            <div class="star-accent"></div>
+            <h2 class="section-title">السجلات / Data Ledger</h2>
+            <div class="star-accent"></div>
+          </div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Andalusian Core</td>
+                <td>Architecture</td>
+                <td><span class="badge badge-success">Active</span></td>
+              </tr>
+              <tr>
+                <td>Damascus Gate</td>
+                <td>Restoration</td>
+                <td><span class="badge badge-warning">Pending</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <div class="demo-card card-combo">
+          <h3>Rose pavilion</h3>
+          <div class="combo-rule"></div>
+          <p>
+            Plain 1px border, one thin pearl rule under the header, four corner
+            medallions. Ornamented without competing with the card's own
+            content.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column: The Feature Card -->
+      <aside class="right-column">
+        <div class="info-card geometric-arch">
+          <div class="card-content">
+            <span class="card-tag">نظام</span>
+            <h3>System Hub</h3>
+            <p>
+              This layout pairs authentic Islamic geometric elements with
+              high-contrast UI layers for an ornate, yet fast layout.
+            </p>
+            <div class="card-footer">
+              <a href="#" class="card-link">View Gallery &rarr;</a>
+            </div>
+          </div>
+          <div class="arch-container">
+            <div class="arch-bottom"></div>
+            <div class="arch-top"></div>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>

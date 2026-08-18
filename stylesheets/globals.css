@@ -1,0 +1,26 @@
+:root {
+  /* ===== COLOR PALETTE ===== */
+  --color-background: #fffdf9;
+  --color-surface: #d6e5e8;
+
+  --color-dark: #072227;
+  --color-primary: #4fbdba;
+  --color-primary-light: #93e2de;
+
+  --color-error: #ea4747;
+  --color-warning: #eaae47;
+  --color-green: #72c965;
+
+  /* ===== SIZE TOKENS ===== */
+  --radius-sm: 0.3rem;
+  --radius-md: 0.6rem;
+  --radius-lg: 0.9rem;
+  --radius-pill: 2rem;
+
+  --border-sm: 0.1rem;
+  --border-md: 0.15rem;
+  --border-lg: 0.3rem;
+
+  --shadow-offset-sm: 0.1rem;
+  --shadow-offset-md: 0.3rem;
+}
