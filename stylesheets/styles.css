@@ -43,7 +43,7 @@ main {
   outline-offset: -17px;
 }
 
-#header-logo::after {
+/* #header-logo::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -53,7 +53,7 @@ main {
     transparent 1px 25px
   );
   opacity: 0.06;
-}
+} */
 
 .masked-icon {
   --icon-color: var(--color-primary);
