@@ -11,7 +11,7 @@ body {
   font-family: "F29LT Bukra", system-ui, serif;
   color: var(--color-dark);
   min-height: 100vh;
-  padding: 3rem 2rem;
+  padding: 3rem 1rem;
   gap: 1rem;
 
   display: flex;
@@ -26,7 +26,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: min(90%, 900px);
+  width: min(95%, 900px);
 }
 
 #header-logo {
@@ -35,11 +35,24 @@ main {
   border-radius: 40% 40% 5px 5px;
 
   display: flex;
-  gap: 1rem;
-  padding: 2rem;
+  flex-direction: column;
+  /* gap: 1rem; */
+  padding: 1rem;
 
   outline: 2px solid var(--color-primary);
-  outline-offset: -15px;
+  outline-offset: -17px;
+}
+
+#header-logo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    60deg,
+    var(--color-primary) 0 1px,
+    transparent 1px 25px
+  );
+  opacity: 0.06;
 }
 
 .masked-icon {
@@ -61,13 +74,46 @@ main {
   mask-position: center;
 }
 
+.logo-container {
+  height: 4rem;
+  width: 100%;
+  margin: 1.5rem 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  /* gap: 1rem; */
+}
+
+@media (min-width: 768px) {
+  .logo-container {
+    margin: 2rem 0rem;
+    margin-top: 3rem;
+    flex-direction: row;
+  }
+
+  .logo-icon {
+    flex: 1;
+    -webkit-mask-position: left center;
+    mask-position: left center;
+  }
+
+  .logo-text {
+    flex: 2;
+    -webkit-mask-position: right center;
+    mask-position: right center;
+  }
+}
+
 .logo-icon {
-  --icon-path: url(../assets/logo_monochrome/logo_tabib.png);
+  --icon-path: url(../assets/logo_monochrome/logo_no_text.png);
   --icon-size: 100%;
 }
 
 .logo-text {
   --icon-path: url(../assets/logo_monochrome/logo_text_only.png);
+  --icon-size: 100%;
 }
 
 .form-inputs {
@@ -95,52 +141,87 @@ main {
   border: solid var(--color-dark) var(--border-md);
   padding: 0.5rem 1rem;
   background-color: oklch(from var(--color-surface) calc(l + 0.05) c h);
+
+  transition:
+    transform 0.2s cubic-bezier(0.2, 0, 0, 1),
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+  will-change: transform;
 }
 
-/* Subtle pattern activation on input select */
 .form-inputs input:focus {
   border-color: var(--color-primary);
   background-color: rgba(147, 226, 222, 0.15);
-  box-shadow: inset 0 0 4px rgba(7, 34, 39, 0.1);
+  box-shadow:
+    inset 0 0 4px rgba(7, 34, 39, 0.1),
+    0 0 0 3px rgba(147, 226, 222, 0.25);
+  transform: translateY(-4px);
   outline: none;
 }
 
-.form-inputs input:hover {
-  border-color: var(--color-primary);
-  background-color: rgba(147, 226, 222, 0.15);
-  box-shadow: inset 0 0 4px rgba(7, 34, 39, 0.1);
-  outline: none;
+/* Desktop-only Hover for Input (Prevents sticky hover on touch) */
+@media (hover: hover) {
+  .form-inputs input:hover:not(:focus) {
+    border-color: var(--color-primary);
+    background-color: rgba(147, 226, 222, 0.08);
+    transform: translateY(-2px);
+  }
 }
 
 /* Ornate Pointed Button Customization */
 .btn-primary {
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  position: relative;
   padding: 0.9rem 2rem;
   font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  text-align: center;
+
+  align-self: center;
   background-color: var(--color-primary);
   color: var(--color-dark);
   border: var(--border-md) solid var(--color-dark);
   border-radius: var(--radius-sm);
-  align-self: center;
-  position: relative;
-  transition:
-    transform 0.1s ease,
-    background-color 0.2s ease;
-}
 
-.btn-primary:hover {
-  background-color: var(--color-primary-light);
-  transform: scale(1.1);
+  /* Smooth transition replacing abrupt transforms */
+  transition:
+    transform 0.15s cubic-bezier(0.2, 0, 0, 1),
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+  will-change: transform;
+  cursor: pointer;
+  display: flex;
+  gap: 0.2rem;
 }
 
 .btn-primary:active {
-  transform: scale(0.9);
+  transform: translateY(-1px) scale(0.98);
 }
 
-.shared_filter {
+.btn-primary:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 2px;
+  transform: translateY(-3px);
+}
+
+@media (hover: hover) {
+  .btn-primary:hover {
+    background-color: var(--color-primary-light);
+    transform: translateY(-4px);
+  }
+
+  .btn-primary:active {
+    transform: translateY(2px) scale(0.95);
+  }
+}
+
+.shared-filter {
   filter: drop-shadow(
     0 var(--shadow-offset-md) var(--shadow-offset-sm) var(--color-surface)
   );

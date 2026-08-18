@@ -9,12 +9,19 @@
       href="https://db.onlinewebfonts.com/c/7a4456451db34fc8abc7a9ce7da13480?family=F29LT+Bukra"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body class="bg-star-pattern">
     <main>
-      <header id="header-logo">
-        <!-- <span class="masked-icon logo-text"></span> -->
-        <span class="masked-icon logo-icon"></span>
+      <header id="header-logo" class="shared-filter">
+        <div class="logo-container">
+          <span class="masked-icon logo-text"></span>
+          <span class="masked-icon logo-icon"></span>
+        </div>
+        <div class="interlace"></div>
       </header>
 
       <form class="basic-card flower-card">
@@ -22,9 +29,12 @@
           >Insert your full name to check if you're in the list of acceptance:
         </label>
         <div class="dotted-line"></div>
-        <div class="form-inputs">
+        <div class="form-inputs shared-filter">
           <input type="text" id="fname" name="fname" placeholder="Full name" />
-          <button class="btn-primary shared_filter flower-card">Search</button>
+          <button class="btn-primary flower-card">
+            <span>Search</span>
+            <i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i>
+          </button>
         </div>
       </form>
     </main>

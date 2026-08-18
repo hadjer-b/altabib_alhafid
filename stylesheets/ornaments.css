@@ -206,20 +206,19 @@
   --medallion-size: 25px;
   --medallion-offset: calc(var(--medallion-size) / -2);
 
-  /* Filter placed on parent so mask-image doesn't clip the shadow */
   filter: drop-shadow(
     0 var(--shadow-offset-md) var(--shadow-offset-sm) var(--color-surface)
   );
 }
 
-/* Base styles for all 4 corner medallions */
+/* base styles for all 4 corner flower icons */
 .flower-card::before,
 .flower-card::after {
   content: "";
   position: absolute;
   width: var(--medallion-size);
   height: var(--medallion-size);
-  background-color: var(--color-primary);
+  background-color: var(--color-dark);
 
   -webkit-mask-image: url("../assets/flower_shape.svg");
   mask-image: url("../assets/flower_shape.svg");
