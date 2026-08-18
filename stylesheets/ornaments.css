@@ -140,21 +140,20 @@
 
 /* Geometric cutout crown / A line of triangles meating eachother at the top and bottom */
 .arch-top {
+  --desired-width: 15%; /* Target size for each triangle */
+
   height: 25px;
   background-color: var(--color-dark);
-  clip-path: polygon(
-    0% 100%,
-    10% 0%,
-    20% 100%,
-    30% 0%,
-    40% 100%,
-    50% 0%,
-    60% 100%,
-    70% 0%,
-    80% 100%,
-    90% 0%,
-    100% 100%
-  );
+
+  /* The 'round' keyword auto-calculates integer count based on current container width */
+  -webkit-mask: conic-gradient(
+      from -45deg at 50% 100%,
+      #000 90deg,
+      transparent 0
+    )
+    0 0 / var(--desired-width) 100% round no-repeat;
+  mask: conic-gradient(from -45deg at 50% 100%, #000 90deg, transparent 0) 0 0 /
+    var(--desired-width) 100% round no-repeat;
 }
 
 .arch-bottom {
@@ -182,6 +181,11 @@
   flex-direction: column;
   background: var(--color-background);
   padding: 1.6rem 1.6rem;
+  border: var(--border-sm) solid var(--color-dark);
+  border-radius: var(--radius-md);
+  filter: drop-shadow(
+    0 var(--shadow-offset-md) var(--shadow-offset-sm) var(--color-surface)
+  );
 }
 
 .basic-card h3 {
@@ -200,15 +204,9 @@
 
 .flower-card {
   position: relative;
-  border: 1px solid var(--color-dark);
-  border-radius: var(--radius-md);
 
-  --medallion-size: 25px;
+  --medallion-size: 16px;
   --medallion-offset: calc(var(--medallion-size) / -2);
-
-  filter: drop-shadow(
-    0 var(--shadow-offset-md) var(--shadow-offset-sm) var(--color-surface)
-  );
 }
 
 /* base styles for all 4 corner flower icons */

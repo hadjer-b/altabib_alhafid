@@ -116,6 +116,21 @@ main {
   --icon-size: 100%;
 }
 
+.half-dotted-card {
+  --medallion-size: 25px;
+  border-bottom: var(--border-md) dotted var(--color-dark);
+  border-radius: 0;
+}
+
+.half-dotted-card::after {
+  top: var(--medallion-offset);
+  right: var(--medallion-offset);
+}
+
+.form-arch-top {
+  margin-top: -1.1rem;
+}
+
 .form-inputs {
   display: flex;
   flex-direction: row;
