@@ -74,6 +74,67 @@
     0 0;
 }
 
+.bg-rhombus {
+  background-color: var(--color-background);
+  background-image:
+    linear-gradient(
+      30deg,
+      var(--color-surface) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--color-surface) 87.5%,
+      var(--color-surface)
+    ),
+    linear-gradient(
+      150deg,
+      var(--color-surface) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--color-surface) 87.5%,
+      var(--color-surface)
+    ),
+    linear-gradient(
+      30deg,
+      var(--color-surface) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--color-surface) 87.5%,
+      var(--color-surface)
+    ),
+    linear-gradient(
+      150deg,
+      var(--color-surface) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--color-surface) 87.5%,
+      var(--color-surface)
+    ),
+    linear-gradient(
+      60deg,
+      rgba(7, 34, 39, 0.02) 25%,
+      transparent 25.5%,
+      transparent 75%,
+      rgba(7, 34, 39, 0.02) 75.5%,
+      rgba(7, 34, 39, 0.02)
+    ),
+    linear-gradient(
+      60deg,
+      rgba(7, 34, 39, 0.02) 25%,
+      transparent 25.5%,
+      transparent 75%,
+      rgba(7, 34, 39, 0.02) 75.5%,
+      rgba(7, 34, 39, 0.02)
+    );
+  background-size: 80px 140px;
+  background-position:
+    0 0,
+    0 0,
+    40px 70px,
+    40px 70px,
+    0 0,
+    40px 70px;
+}
+
 /* Giant Background Rhombus Corners */
 .bg-ornament {
   position: fixed;
@@ -98,21 +159,146 @@
 }
 
 /* A card with simple striped pattern inside */
-.card {
+.striped-pattern {
   position: relative;
   overflow: hidden;
 }
 
-.card::after {
+.striped-pattern ::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: repeating-linear-gradient(
-    60deg,
-    var(--color-primary) 0 1px,
-    transparent 1px 26px
+  opacity: 0.05;
+
+  background: linear-gradient(
+    /* 135deg, */ transparent,
+    var(--color-surface),
+    transparent
   );
-  opacity: 0.06;
+
+  /* --- Pattern Size Controls --- */
+  --pattern-w: 80px;
+  --pattern-h: calc(var(--pattern-w) * 1.75);
+  --pattern-half-w: calc(var(--pattern-w) / 2);
+  --pattern-half-h: calc(var(--pattern-h) / 2);
+
+  /* 2. Use the pattern as a mask (opaque areas reveal the background gradient) */
+  -webkit-mask-image:
+    linear-gradient(
+      30deg,
+      #000 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #000 87.5%,
+      #000
+    ),
+    linear-gradient(
+      150deg,
+      #000 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #000 87.5%,
+      #000
+    ),
+    linear-gradient(
+      30deg,
+      #000 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #000 87.5%,
+      #000
+    ),
+    linear-gradient(
+      150deg,
+      #000 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #000 87.5%,
+      #000
+    ),
+    linear-gradient(
+      60deg,
+      rgba(0, 0, 0, 0.3) 25%,
+      transparent 25.5%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.3) 75.5%,
+      rgba(0, 0, 0, 0.3)
+    ),
+    linear-gradient(
+      60deg,
+      rgba(0, 0, 0, 0.3) 25%,
+      transparent 25.5%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.3) 75.5%,
+      rgba(0, 0, 0, 0.3)
+    );
+  mask-image:
+    linear-gradient(
+      30deg,
+      #000 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #000 87.5%,
+      #000
+    ),
+    linear-gradient(
+      150deg,
+      #000 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #000 87.5%,
+      #000
+    ),
+    linear-gradient(
+      30deg,
+      #000 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #000 87.5%,
+      #000
+    ),
+    linear-gradient(
+      150deg,
+      #000 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #000 87.5%,
+      #000
+    ),
+    linear-gradient(
+      60deg,
+      rgba(0, 0, 0, 0.3) 25%,
+      transparent 25.5%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.3) 75.5%,
+      rgba(0, 0, 0, 0.3)
+    ),
+    linear-gradient(
+      60deg,
+      rgba(0, 0, 0, 0.3) 25%,
+      transparent 25.5%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.3) 75.5%,
+      rgba(0, 0, 0, 0.3)
+    );
+
+  -webkit-mask-size: var(--pattern-w) var(--pattern-h);
+  mask-size: var(--pattern-w) var(--pattern-h);
+
+  -webkit-mask-position:
+    0 0,
+    0 0,
+    var(--pattern-half-w) var(--pattern-half-h),
+    var(--pattern-half-w) var(--pattern-half-h),
+    0 0,
+    var(--pattern-half-w) var(--pattern-half-h);
+  mask-position:
+    0 0,
+    0 0,
+    var(--pattern-half-w) var(--pattern-half-h),
+    var(--pattern-half-w) var(--pattern-half-h),
+    0 0,
+    var(--pattern-half-w) var(--pattern-half-h);
 }
 
 /* Two diagonal stipes crossing each other */

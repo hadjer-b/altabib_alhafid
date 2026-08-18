@@ -43,7 +43,7 @@ main {
   outline-offset: -17px;
 }
 
-#header-logo::before {
+#header-logo::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -124,7 +124,6 @@ main {
 
 .half-dotted-card::after {
   top: var(--medallion-offset);
-  right: var(--medallion-offset);
 }
 
 .form-arch-top {
