@@ -82,11 +82,23 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
   /* gap: 1rem; */
 }
 
-@media (min-width: 768px) {
+.logo-icon {
+  flex: 2;
+  --icon-path: url(../assets/logo_monochrome/logo_no_text.png);
+  --icon-size: 100%;
+}
+
+.logo-text {
+  flex: 1;
+  --icon-path: url(../assets/logo_monochrome/logo_text_only.png);
+  --icon-size: 100%;
+}
+
+@media (min-width: 600px) {
   .logo-container {
     margin: 2rem 0rem;
     margin-top: 3rem;
@@ -101,19 +113,10 @@ main {
 
   .logo-text {
     flex: 2;
+    height: 10rem;
     -webkit-mask-position: right center;
     mask-position: right center;
   }
-}
-
-.logo-icon {
-  --icon-path: url(../assets/logo_monochrome/logo_no_text.png);
-  --icon-size: 100%;
-}
-
-.logo-text {
-  --icon-path: url(../assets/logo_monochrome/logo_text_only.png);
-  --icon-size: 100%;
 }
 
 .half-dotted-card {
@@ -187,12 +190,12 @@ main {
 .btn-primary {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 
   position: relative;
-  padding: 0.9rem 2rem;
+  padding: 0.5rem 2rem;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1.25rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-align: center;
@@ -233,6 +236,10 @@ main {
   .btn-primary:active {
     transform: translateY(2px) scale(0.95);
   }
+}
+
+.btn-primary i {
+  margin-top: 0.25rem;
 }
 
 .shared-filter {
