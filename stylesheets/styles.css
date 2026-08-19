@@ -195,7 +195,7 @@ main {
   position: relative;
   padding: 0.5rem 2rem;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-align: center;
@@ -242,6 +242,43 @@ main {
   margin-top: 0.25rem;
 }
 
+#name-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.logo-profile {
+  --icon-path: url(../assets/logo_monochrome/logo_female_profile.png);
+  --icon-size: 3.5rem;
+  --icon-color: var(--color-primary);
+}
+
+.name-card {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 1rem;
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.name-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: end;
+}
+
+@media (max-width: 500px) {
+  .name-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
 .shared-filter {
   filter: drop-shadow(
     0 var(--shadow-offset-md) var(--shadow-offset-sm) var(--color-surface)
