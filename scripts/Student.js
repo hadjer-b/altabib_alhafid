@@ -1,14 +1,14 @@
 export class Student {
-  constructor({
-    full_name,
-    name_prof,
-    email_adresse = "studentemail@gmail.com",
-    phone_number = "0676842067",
-  } = {}) {
-    this.full_name = full_name;
-    this.name_prof = name_prof;
-    this.email_adresse = email_adresse;
-    this.phone_number = phone_number;
+  constructor(
+    fullName,
+    profName,
+    emailAdresse = "studentemail@gmail.com",
+    phoneNumber = "0676842067",
+  ) {
+    this.fullName = fullName;
+    this.profName = profName;
+    this.emailAdresse = emailAdresse;
+    this.phoneNumber = phoneNumber;
   }
 
   get_group_adresse() {

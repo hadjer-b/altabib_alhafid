@@ -1,8 +1,8 @@
-const filePath = "assets/sheets/prof_students_list.csv";
+const FILEPATH = "assets/sheets/prof_students_list.csv";
 
-async function fetchAndParseCSV() {
+export async function fetchAndParseCSV() {
   try {
-    const response = await fetch(filePath);
+    const response = await fetch(FILEPATH);
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -26,7 +26,6 @@ function parseCSV(text) {
 function organizeParsedData(parsedData) {
   let prof_name = "";
   let student_prof_dict = {};
-  console.log(parsedData);
   const rows = parsedData.slice(1);
 
   for (const parsedLine of rows) {
@@ -45,4 +44,5 @@ function organizeParsedData(parsedData) {
       student_prof_dict[prof_name].push(student);
     }
   }
+  return student_prof_dict;
 }
