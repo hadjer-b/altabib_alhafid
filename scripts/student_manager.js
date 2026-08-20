@@ -40,13 +40,15 @@ function renderStudentList(studentList) {
     <div class="student-info-container error-color">
       <i class="fa-solid fa-triangle-exclamation"></i>
       <div class="info-content">
-        <h3>الاسم المُدخل غير موجود</h3>
+        <h3>   الاسم المُدخل غير موجود، أُكتبيه جيدا  
+         <h3>
       </div>
     </div>
     <div class="student-info-container">
       <i class="fa-brands fa-telegram"></i>
       <div class="info-content">
-        <a href="https://web.telegram.org/a/">اتصل بنا للحصول على المساعدة</a>
+        <a href="https://web.telegram.org/a/">
+تحتاجين مساعدة ؟ اضغطي هنا للتواصل مع البوت        </a>
       </div>
     </div>
   </div>`;
