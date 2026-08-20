@@ -60,8 +60,8 @@ function renderStudentList(studentList) {
       .map(
         (s) => `
       <div class="name-card basic-card">
-        <div class="name-container">
-          <span class="masked-icon logo-profile"></span>
+        <div class="student-info-container student-name">
+          <i class="fa-solid fa-user-graduate"></i>
           <h3>${s.fullName}</h3>
         </div>
         <div class="student-info-container">
