@@ -1,5 +1,5 @@
 # Al Tabib Al Hafid
-![logo](./assets/logo_colors/logo_tabib.png)
+![logo](./assets/logo_colors/logo_tabib_white.jpg)
 
 Althabib Alhafid – Medical Students' Club Portal
 
