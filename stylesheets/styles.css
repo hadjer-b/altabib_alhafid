@@ -373,9 +373,19 @@ a:active {
 .footer-card {
   /* width: fit-content; */
   /* margin: auto; */
+  font-family: "F29LT Bukra Regular", sans-serif;
   opacity: 0.7;
   flex-direction: column;
   align-items: center;
+}
+
+.footer-card span {
+  color: var(--color-primary-dark);
+}
+
+.footer-card i {
+  color: var(--color-primary-dark);
+  font-size: 1rem;
 }
 
 .footer-card p {
