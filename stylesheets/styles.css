@@ -370,26 +370,42 @@ a:active {
   }
 }
 
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
 .footer-card {
-  /* width: fit-content; */
-  /* margin: auto; */
   font-family: "F29LT Bukra Regular", sans-serif;
-  opacity: 0.7;
   flex-direction: column;
   align-items: center;
-}
-
-.footer-card span {
-  color: var(--color-primary-dark);
-}
-
-.footer-card i {
-  color: var(--color-primary-dark);
-  font-size: 1rem;
+  border: none;
+  /* width: fit-content; */
+  /* margin: auto; */
+  background-color: color-mix(
+    in srgb,
+    var(--color-background) 50%,
+    transparent
+  );
 }
 
 .footer-card p {
   opacity: 1;
+  color: var(--color-dark);
+}
+
+.coder-credit {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.coder-credit span {
+  color: var(--color-primary-dark);
+}
+
+.coder-crediti {
+  color: var(--color-primary-dark);
+  font-size: 1rem;
 }
 
 /* ==========================================================================
