@@ -5,7 +5,8 @@
 - [x] Qobool card
 - [x] Search engine needs to be working
 - [x] Didn't find anyone card
-- [ ] Clean up the names displays
+- [x] Clean up the names displays
 - [x] About contact
 - [ ] Female language for instructions
 - [ ] host on github
+- [ ] Check font size consistencies (the search button, the qobool card)
