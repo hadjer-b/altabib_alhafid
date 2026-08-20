@@ -12,7 +12,7 @@ async function init() {
     }
   }
 
-  // renderStudentList(studentInstances);
+  renderStudentList(studentInstances);
 }
 
 function renderStudentList(studentList) {
@@ -22,15 +22,43 @@ function renderStudentList(studentList) {
 
   const studentCard = studentList
     .map(
-      (s) => `
-               <div class="name-card basic-card">
-          <div class="name-container">
-            <span class="masked-icon logo-profile"></span>
-            <h4>${s.fullName} ${s.profName}</h4>
-          </div>
-          <button class="btn-primary shared-filter">More</button>
+      (s) =>
+        `
+      <div class="name-card basic-card">
+        <div class="name-container">
+          <span class="masked-icon logo-profile"></span>
+          <h3>${s.fullName}</h3>
         </div>
-  `,
+        <div class="student-info-container">
+          <i class="fa-solid fa-id-card"></i>
+          <div class="info-content">
+            <h3>رقم التعريف الشخصي </h3>
+            <h4>${s.studentID}</h4>
+          </div>
+        </div>
+        <div class="student-info-container">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <div class="info-content">
+            <h3>اسم الاستاذة </h3>
+          <h4>${s.profName}</h4>
+          </div>
+        </div>
+        <div class="student-info-container">
+          <i id="telegram-logo" class="fa-brands fa-telegram"></i>
+          <div class="info-content">
+            <a href=${s.getGroupLink()}>رابط مجموعة الأستاذة</a>
+          </div>
+        </div>
+
+        <div class="id-num-notice">
+        <div class="student-info-container">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <div class="info-content">
+            <h4>يرجى الاحتفاظ برقم التعريف الشخصي</h4>
+          </div>
+        </div>
+      </div>
+      </div>`,
     )
     .join("");
   nameContainer.innerHTML = studentCard;

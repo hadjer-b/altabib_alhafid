@@ -4,14 +4,16 @@ export class Student {
     profName,
     emailAdresse = "studentemail@gmail.com",
     phoneNumber = "0676842067",
+    studentID = "2002010",
   ) {
     this.fullName = fullName;
     this.profName = profName;
     this.emailAdresse = emailAdresse;
     this.phoneNumber = phoneNumber;
+    this.studentID = studentID;
   }
 
-  get_group_adresse() {
-    return "htttps://telegram.test.com";
+  getGroupLink() {
+    return "https://web.telegram.org/a/";
   }
 }
