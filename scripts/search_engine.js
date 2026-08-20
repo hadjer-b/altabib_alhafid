@@ -34,8 +34,13 @@ export function normalizeArbString(string) {
 export function searchNameMatch(query, studentInstances) {
   const cleanQuery = normalizeArbString(query.trim().toLowerCase());
   if (!cleanQuery) return [];
+
+  const queryWords = cleanQuery.split(/\s+/).filter(Boolean);
+
   return studentInstances.filter((item) => {
+    if (!item.fullName) return false;
     const cleanName = normalizeArbString(item.fullName.toLowerCase());
-    return cleanName.includes(cleanQuery);
+
+    return queryWords.every((word) => cleanName.includes(word));
   });
 }
