@@ -1,3 +1,5 @@
+import { normalizeArbString } from "./search_engine.js";
+
 export class Student {
   constructor(
     fullName,
@@ -6,8 +8,8 @@ export class Student {
     phoneNumber = "0676842067",
     studentID = "2002010",
   ) {
-    this.fullName = fullName;
-    this.profName = profName;
+    this.fullName = normalizeArbString(fullName);
+    this.profName = normalizeArbString(profName);
     this.emailAdresse = emailAdresse;
     this.phoneNumber = phoneNumber;
     this.studentID = studentID;

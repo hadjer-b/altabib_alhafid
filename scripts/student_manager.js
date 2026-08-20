@@ -1,18 +1,32 @@
 import { fetchAndParseCSV } from "./csv_parser.js";
 import { Student } from "./Student.js";
+import { searchNameMatch } from "./search_engine.js";
+
+export let studentInstances = [];
 
 async function init() {
   const dict = await fetchAndParseCSV();
   console.log(dict);
 
-  const studentInstances = [];
   for (const [prof, studentList] of Object.entries(dict)) {
     for (const studentName of studentList) {
       studentInstances.push(new Student(studentName, prof));
     }
   }
 
-  renderStudentList(studentInstances);
+  connectSearchEvents();
+  // renderStudentList(studentInstances);
+}
+
+function connectSearchEvents() {
+  const searchBtn = document.getElementById("search-btn");
+  const searchInput = document.getElementById("search-input");
+
+  searchBtn.addEventListener("click", () => {
+    const searchQuery = searchInput.value;
+    const foundStudents = searchNameMatch(searchQuery, studentInstances);
+    renderStudentList(foundStudents);
+  });
 }
 
 function renderStudentList(studentList) {
@@ -20,10 +34,24 @@ function renderStudentList(studentList) {
   const nameContainer = document.getElementById("name-list-container");
   if (!nameContainer) return;
 
-  const studentCard = studentList
-    .map(
-      (s) =>
-        `
+  let searchCardOuput = "";
+
+  const searchNotFound = `<div class="name-card basic-card">
+    <div class="student-info-container error-color">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <div class="info-content">
+        <h3>الاسم المُدخل غير موجود</h3>
+      </div>
+    </div>
+    <div class="student-info-container">
+      <i class="fa-brands fa-telegram"></i>
+      <div class="info-content">
+        <a href="https://web.telegram.org/a/">اتصل بنا للحصول على المساعدة</a>
+      </div>
+    </div>
+  </div>;`;
+
+  const studentCard = `
       <div class="name-card basic-card">
         <div class="name-container">
           <span class="masked-icon logo-profile"></span>
@@ -58,9 +86,15 @@ function renderStudentList(studentList) {
           </div>
         </div>
       </div>
-      </div>`,
-    )
-    .join("");
+      </div>
+  `;
+
+  if (studentInstances.length === 0) {
+    searchCardOuput = searchNotFound;
+  } else {
+    searchCardOuput = studentList.map((s) => studentCard).join("");
+  }
+
   nameContainer.innerHTML = studentCard;
 }
 

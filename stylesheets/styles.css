@@ -325,6 +325,14 @@ main {
   color: var(--color-error);
 }
 
+.error-color {
+  color: var(--color-error);
+}
+
+.error-color i {
+  color: var(--color-error);
+}
+
 .id-num-notice i {
   color: var(--color-error);
 }
