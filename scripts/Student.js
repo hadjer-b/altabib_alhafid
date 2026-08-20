@@ -8,8 +8,8 @@ export class Student {
     phoneNumber = "0676842067",
     studentID = "2002010",
   ) {
-    this.fullName = normalizeArbString(fullName);
-    this.profName = normalizeArbString(profName);
+    this.fullName = fullName;
+    this.profName = profName;
     this.emailAdresse = emailAdresse;
     this.phoneNumber = phoneNumber;
     this.studentID = studentID;

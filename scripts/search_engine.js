@@ -35,7 +35,7 @@ export function searchNameMatch(query, studentInstances) {
   const cleanQuery = normalizeArbString(query.trim().toLowerCase());
   if (!cleanQuery) return [];
   return studentInstances.filter((item) => {
-    const cleanName = normalizeArabic(item.fullName.toLowerCase());
+    const cleanName = normalizeArbString(item.fullName.toLowerCase());
     return cleanName.includes(cleanQuery);
   });
 }

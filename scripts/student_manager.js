@@ -19,12 +19,14 @@ async function init() {
 }
 
 function connectSearchEvents() {
-  const searchBtn = document.getElementById("search-btn");
+  const searchForm = document.getElementById("search-form");
   const searchInput = document.getElementById("search-input");
 
-  searchBtn.addEventListener("click", () => {
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
     const searchQuery = searchInput.value;
     const foundStudents = searchNameMatch(searchQuery, studentInstances);
+
     renderStudentList(foundStudents);
   });
 }
@@ -49,9 +51,14 @@ function renderStudentList(studentList) {
         <a href="https://web.telegram.org/a/">اتصل بنا للحصول على المساعدة</a>
       </div>
     </div>
-  </div>;`;
+  </div>`;
 
-  const studentCard = `
+  if (studentList.length === 0) {
+    searchCardOuput = searchNotFound;
+  } else {
+    searchCardOuput = studentList
+      .map(
+        (s) => `
       <div class="name-card basic-card">
         <div class="name-container">
           <span class="masked-icon logo-profile"></span>
@@ -87,15 +94,12 @@ function renderStudentList(studentList) {
         </div>
       </div>
       </div>
-  `;
-
-  if (studentInstances.length === 0) {
-    searchCardOuput = searchNotFound;
-  } else {
-    searchCardOuput = studentList.map((s) => studentCard).join("");
+  `,
+      )
+      .join("");
   }
 
-  nameContainer.innerHTML = studentCard;
+  nameContainer.innerHTML = searchCardOuput;
 }
 
 init();
