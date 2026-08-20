@@ -8,11 +8,16 @@ export class Student {
     phoneNumber = "0676842067",
     studentID = "2002010",
   ) {
-    this.fullName = fullName;
-    this.profName = profName;
+    this.fullName = this.fixQaaFontBug(fullName);
+    this.profName = this.fixQaaFontBug(profName);
     this.emailAdresse = emailAdresse;
     this.phoneNumber = phoneNumber;
     this.studentID = studentID;
+  }
+
+  fixQaaFontBug(text) {
+    if (!text) return "";
+    return text.replace(/ڨ/g, "ڤ");
   }
 
   getGroupLink() {

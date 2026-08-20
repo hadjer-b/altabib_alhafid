@@ -1,6 +1,17 @@
 @import url(globals.css);
 @import url(ornaments.css);
 
+@font-face {
+  font-family: "Cairo";
+  /* 1. Put quotes around paths containing commas or special characters */
+  src: url("../assets/fonts/Cairo/static/Cairo-Regular.ttf") format("truetype");
+
+  /* 2. Define the variable weight range instead of "normal" */
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ==========================================================================
    RESET & BASE
    ========================================================================== */
@@ -11,7 +22,10 @@
 }
 
 body {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  /* font-family: "IBM Plex Sans Arabic", sans-serif; */
+  font-family: "Cairo", sans-serif;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: common-ligatures;
   color: var(--color-dark);
   min-height: 100vh;
   padding: 3rem 1rem;

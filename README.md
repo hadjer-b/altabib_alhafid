@@ -6,4 +6,6 @@
 - [x] Search engine needs to be working
 - [x] Didn't find anyone card
 - [ ] Clean up the names displays
-- [ ] About contact
+- [x] About contact
+- [ ] Female language for instructions
+- [ ] host on github
