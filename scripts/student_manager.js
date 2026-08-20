@@ -15,7 +15,6 @@ async function init() {
   }
 
   connectSearchEvents();
-  // renderStudentList(studentInstances);
 }
 
 function connectSearchEvents() {
@@ -32,7 +31,6 @@ function connectSearchEvents() {
 }
 
 function renderStudentList(studentList) {
-  console.log(studentList);
   const nameContainer = document.getElementById("name-list-container");
   if (!nameContainer) return;
 

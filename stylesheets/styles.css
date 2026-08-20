@@ -3,10 +3,9 @@
 
 @font-face {
   font-family: "Cairo";
-  /* 1. Put quotes around paths containing commas or special characters */
-  src: url("../assets/fonts/Cairo/static/Cairo-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf")
+    format("truetype");
 
-  /* 2. Define the variable weight range instead of "normal" */
   font-weight: 200 1000;
   font-style: normal;
   font-display: swap;
@@ -28,7 +27,7 @@ body {
   font-variant-ligatures: common-ligatures;
   color: var(--color-dark);
   min-height: 100vh;
-  padding: 3rem 1rem;
+
   gap: 1rem;
 
   display: flex;
@@ -39,6 +38,7 @@ body {
 }
 
 main {
+  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -188,7 +188,7 @@ a:active {
 
 .form-inputs input {
   width: 100%;
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Cairo", sans-serif;
   color: oklch(from var(--color-dark) calc(l - 0.05) c h);
 
   border-radius: var(--radius-md);
@@ -389,7 +389,9 @@ a:active {
    ========================================================================== */
 
 .footer-card {
+  width: 100%;
   font-family: "F29LT Bukra Regular", sans-serif;
+  font-weight: 400;
   flex-direction: column;
   align-items: center;
   border: none;

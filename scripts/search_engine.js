@@ -9,17 +9,17 @@ export function normalizeArbString(string) {
       //  Remove Tashkeel
       .replace(/[\u064B-\u0652\u0640]/g, "")
 
-      // 3. Normalize special / dialectal characters to standard letters
+      //  Normalize special / dialectal characters to standard letters
       .replace(/[ڨڤڥ]/g, "ق")
       .replace(/پ/g, "ب")
       .replace(/چ/g, "ج")
-      .replace(/[گݣک]/g, "ك") // Added "ک" (Persian Kaf)
+      .replace(/[گݣک]/g, "ك")
 
       .replace(/[أإآٱ]/g, "ا")
 
       .replace(/ة/g, "ه")
 
-      .replace(/[ىی]/g, "ي") // Added "ی" (Persian Yaa)
+      .replace(/[ىی]/g, "ي")
 
       .replace(/ؤ/g, "و")
       .replace(/ئ/g, "ي")
