@@ -12,7 +12,7 @@ async function init() {
     }
   }
 
-  renderStudentList(studentInstances);
+  // renderStudentList(studentInstances);
 }
 
 function renderStudentList(studentList) {

@@ -6,6 +6,7 @@
   --color-dark: #072227;
   --color-primary: #4fbdba;
   --color-primary-light: #93e2de;
+  --color-primary-dark: oklch(from #4fbdba calc(l - 0.15) c h);
 
   --color-error: #ea4747;
   --color-warning: #eaae47;
