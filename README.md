@@ -2,9 +2,8 @@
 
 # TODO:
 
-- [ ] Qobool card
-- [ ] Search engine needs to be working
-- [ ] Didn't find anyone card
+- [x] Qobool card
+- [x] Search engine needs to be working
+- [x] Didn't find anyone card
 - [ ] Clean up the names displays
-- [ ] Pagination
 - [ ] About contact
