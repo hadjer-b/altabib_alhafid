@@ -9,4 +9,4 @@
 - [x] About contact
 - [ ] Female language for instructions
 - [ ] host on github
-- [ ] Check font size consistencies (the search button, the qobool card)
+- [x] Check font size consistencies (the search button, the qobool card)

@@ -227,6 +227,7 @@ a:active {
    BUTTONS
    ========================================================================== */
 .btn-primary {
+  font-family: "Cairo", sans-serif;
   display: flex;
   justify-content: center;
   gap: 0.2rem;
@@ -315,7 +316,7 @@ a:active {
   font-size: 2rem;
   color: var(--color-primary);
   flex-shrink: 0;
-  min-width: 2rem;
+  min-width: 2.5rem;
 }
 
 .student-info-container h3 {
@@ -351,6 +352,7 @@ a:active {
 }
 
 .info-content {
+  font-size: 1.1rem;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
