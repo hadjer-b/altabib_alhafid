@@ -23,9 +23,12 @@ function renderStudentList(studentList) {
   const studentCard = studentList
     .map(
       (s) => `
-        <div class="name-card basic-card">
-          <h3>${s.fullName}</h3>
-          <h2>${s.profName}</h2>
+               <div class="name-card basic-card">
+          <div class="name-container">
+            <span class="masked-icon logo-profile"></span>
+            <h4>${s.fullName} ${s.profName}</h4>
+          </div>
+          <button class="btn-primary shared-filter">More</button>
         </div>
   `,
     )

@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: "F29LT Bukra", system-ui, serif;
+  font-family: "F29LT Bukra Regular", system-ui, serif;
   color: var(--color-dark);
   min-height: 100vh;
   padding: 3rem 1rem;
@@ -16,7 +16,6 @@ body {
 
   display: flex;
   align-items: center;
-  /* align-items: flex-start; */
   flex-direction: column;
   position: relative;
   overflow-x: hidden;
@@ -43,7 +42,7 @@ main {
   outline-offset: -17px;
 }
 
-/* #header-logo::after {
+#header-logo::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -53,7 +52,7 @@ main {
     transparent 1px 25px
   );
   opacity: 0.06;
-} */
+}
 
 .masked-icon {
   --icon-color: var(--color-primary);
@@ -127,6 +126,10 @@ main {
 
 .half-dotted-card::after {
   top: var(--medallion-offset);
+}
+
+.half-dotted-card label {
+  font-family: "F29LT Bukra";
 }
 
 .form-arch-top {
