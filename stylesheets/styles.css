@@ -416,8 +416,8 @@ a:active {
   flex-wrap: wrap;
 }
 
-.coder-credit span {
-  color: var(--color-primary-dark);
+.coder-credit a {
+  text-decoration: none;
 }
 
 .coder-crediti {
