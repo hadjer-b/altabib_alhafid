@@ -1,6 +1,14 @@
 @import url(globals.css);
 @import url(ornaments.css);
 
+@font-face {
+  font-family: "F29LT Bukra Regular";
+  src: url(../assets/fonts/29LT_bukra_regular/29LT_bukra_regular.ttf)
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,7 +16,8 @@
 }
 
 body {
-  font-family: "F29LT Bukra Regular", system-ui, serif;
+  /* font-family: "F29LT Bukra Regular", "Noto Sans Arabic", serif; */
+  font-family: "IBM Plex Sans Arabic", sans-serif;
   color: var(--color-dark);
   min-height: 100vh;
   padding: 3rem 1rem;
@@ -129,7 +138,7 @@ main {
 }
 
 .half-dotted-card label {
-  font-family: "F29LT Bukra";
+  font-weight: 900;
 }
 
 .form-arch-top {
@@ -154,7 +163,7 @@ main {
 
 .form-inputs input {
   width: 100%;
-  font-family: "F29LT Bukra", system-ui, serif;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
   color: oklch(from var(--color-dark) calc(l - 0.05) c h);
 
   border-radius: var(--radius-md);
@@ -270,7 +279,7 @@ main {
 }
 
 .name-container {
-  font-family: "F29LT Bukra";
+  font-weight: 900;
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
